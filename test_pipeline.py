@@ -75,47 +75,47 @@ def create_sample_posts():
 
 def test_data_processing():
     """Test data processing functionality"""
-    print("🧪 Testing Data Processing...")
+    print(" Testing Data Processing...")
     
     # Create sample posts
     posts = create_sample_posts()
-    print(f"✅ Created {len(posts)} sample posts")
+    print(f" Created {len(posts)} sample posts")
     
     # Initialize processor
     processor = DataProcessor()
     
     # Process posts
     df = processor.process_posts(posts)
-    print(f"✅ Processed posts into DataFrame with {len(df)} rows")
+    print(f" Processed posts into DataFrame with {len(df)} rows")
     
     # Generate analytics summary
     summary = processor.generate_analytics_summary(posts)
-    print(f"✅ Generated analytics summary for {summary.date}")
+    print(f" Generated analytics summary for {summary.date}")
     
     # Test individual analytics functions
     daily_metrics = processor.compute_daily_metrics(df)
-    print(f"✅ Computed daily metrics for {len(daily_metrics)} date-platform combinations")
+    print(f" Computed daily metrics for {len(daily_metrics)} date-platform combinations")
     
     top_posts = processor.get_top_posts(df, top_n=5)
-    print(f"✅ Identified top {len(top_posts)} posts by engagement")
+    print(f" Identified top {len(top_posts)} posts by engagement")
     
     top_per_platform = processor.get_top_posts_per_platform(df, top_n=3)
-    print(f"✅ Identified top posts per platform for {len(top_per_platform)} platforms")
+    print(f" Identified top posts per platform for {len(top_per_platform)} platforms")
     
     moving_averages = processor.compute_moving_averages(df)
-    print(f"✅ Computed moving averages for {len(moving_averages)} platforms")
+    print(f" Computed moving averages for {len(moving_averages)} platforms")
     
     platform_comparison = processor.get_platform_comparison(df)
-    print(f"✅ Generated platform comparison for {len(platform_comparison)} platforms")
+    print(f" Generated platform comparison for {len(platform_comparison)} platforms")
     
     anomalies = processor.detect_anomalies(df, threshold=2.0)
-    print(f"✅ Detected {len(anomalies)} anomalous posts")
+    print(f" Detected {len(anomalies)} anomalous posts")
     
     return summary, df
 
 def test_data_storage():
     """Test data storage functionality"""
-    print("\n💾 Testing Data Storage...")
+    print("\n Testing Data Storage...")
     
     # Create sample posts and summary
     posts = create_sample_posts()
@@ -127,30 +127,30 @@ def test_data_storage():
     
     # Test JSON storage
     json_file = storage.save_posts_json(posts, "test_posts.json")
-    print(f"✅ Saved posts to JSON: {json_file}")
+    print(f" Saved posts to JSON: {json_file}")
     
     # Test CSV storage
     csv_file = storage.save_posts_csv(posts, "test_posts.csv")
-    print(f"✅ Saved posts to CSV: {csv_file}")
+    print(f" Saved posts to CSV: {csv_file}")
     
     # Test analytics summary storage
     summary_json = storage.save_analytics_summary(summary, 'json')
-    print(f"✅ Saved analytics summary to JSON: {summary_json}")
+    print(f" Saved analytics summary to JSON: {summary_json}")
     
     summary_csv = storage.save_analytics_summary(summary, 'csv')
-    print(f"✅ Saved analytics summary to CSV: {summary_csv}")
+    print(f" Saved analytics summary to CSV: {summary_csv}")
     
     # Test database storage
     storage.save_to_database(posts, summary)
-    print("✅ Saved data to database")
+    print(" Saved data to database")
     
     # Test loading from storage
     loaded_posts = storage.load_posts_from_json(json_file)
-    print(f"✅ Loaded {len(loaded_posts)} posts from JSON")
+    print(f" Loaded {len(loaded_posts)} posts from JSON")
     
     # Get storage stats
     stats = storage.get_storage_stats()
-    print(f"✅ Storage stats: {stats}")
+    print(f" Storage stats: {stats}")
     
     return storage
 
@@ -166,34 +166,34 @@ def test_pipeline_integration():
         
         # Get pipeline status
         status = pipeline.get_pipeline_status()
-        print(f"✅ Pipeline status: {status}")
+        print(f" Pipeline status: {status}")
         
-        print("✅ Pipeline integration test completed")
+        print(" Pipeline integration test completed")
         
     except ImportError as e:
-        print(f"⚠️  Pipeline import failed (expected without API credentials): {e}")
+        print(f"  Pipeline import failed (expected without API credentials): {e}")
     except Exception as e:
-        print(f"⚠️  Pipeline test failed: {e}")
+        print(f"  Pipeline test failed: {e}")
 
 def display_sample_analytics(summary, df):
     """Display sample analytics results"""
-    print("\n📊 Sample Analytics Results:")
+    print("\n Sample Analytics Results:")
     print("=" * 50)
     
     # Display daily metrics
-    print("\n📅 Daily Metrics:")
+    print("\n Daily Metrics:")
     for metric in summary.daily_metrics[:3]:  # Show first 3
         print(f"  {metric.date} - {metric.platform}: {metric.total_posts} posts, "
               f"{metric.total_engagement} total engagement")
     
     # Display top posts
-    print("\n🏆 Top Posts Overall:")
+    print("\n Top Posts Overall:")
     for i, post in enumerate(summary.top_posts_overall[:3], 1):
         print(f"  {i}. {post.platform} - {post.engagement_score} engagement "
               f"({post.likes} likes, {post.comments} comments, {post.shares} shares)")
     
     # Display platform comparison
-    print("\n📈 Platform Comparison:")
+    print("\n Platform Comparison:")
     processor = DataProcessor()
     comparison = processor.get_platform_comparison(df)
     
@@ -203,7 +203,7 @@ def display_sample_analytics(summary, df):
 
 def main():
     """Main test function"""
-    print("🚀 Social Media Analytics Pipeline - Test Suite")
+    print(" Social Media Analytics Pipeline - Test Suite")
     print("=" * 60)
     
     try:
@@ -219,12 +219,12 @@ def main():
         # Display sample results
         display_sample_analytics(summary, df)
         
-        print("\n🎉 All tests completed successfully!")
-        print("\n📁 Check the 'test_output' directory for generated files")
-        print("📊 Review the analytics results above")
+        print("\n All tests completed successfully!")
+        print("\n Check the 'test_output' directory for generated files")
+        print(" Review the analytics results above")
         
     except Exception as e:
-        print(f"\n❌ Test suite failed: {e}")
+        print(f"\n Test suite failed: {e}")
         import traceback
         traceback.print_exc()
         return 1
