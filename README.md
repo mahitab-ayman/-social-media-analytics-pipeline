@@ -345,9 +345,3 @@ pipeline = SocialMediaAnalyticsPipeline()
 5. Submit a pull request
 
 
-- Check the troubleshooting section
-- Review the configuration documentation
-
----
-
-**Note**: This pipeline requires valid API credentials from the respective social media platforms. Make sure to comply with each platform's terms of service and rate limiting policies.
