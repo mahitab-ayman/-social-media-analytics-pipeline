@@ -1,0 +1,47 @@
+# Social Media Analytics Pipeline Environment Configuration
+# Copy this file to .env and fill in your actual API credentials
+
+# Database Configuration
+DATABASE_URL=sqlite:///social_media_analytics.db
+POSTGRES_HOST=localhost
+POSTGRES_PORT=5432
+POSTGRES_DB=social_media_analytics
+POSTGRES_USER=postgres
+POSTGRES_PASSWORD=your_password_here
+
+# Twitter API Configuration
+# Get these from https://developer.twitter.com/en/portal/dashboard
+TWITTER_API_KEY=your_twitter_api_key_here
+TWITTER_API_SECRET=your_twitter_api_secret_here
+TWITTER_ACCESS_TOKEN=your_twitter_access_token_here
+TWITTER_ACCESS_TOKEN_SECRET=your_twitter_access_token_secret_here
+TWITTER_BEARER_TOKEN=your_twitter_bearer_token_here
+
+# Facebook API Configuration
+# Get these from https://developers.facebook.com/
+FACEBOOK_APP_ID=your_facebook_app_id_here
+FACEBOOK_APP_SECRET=your_facebook_app_secret_here
+FACEBOOK_ACCESS_TOKEN=your_facebook_access_token_here
+
+# YouTube API Configuration
+# Get these from https://console.developers.google.com/
+YOUTUBE_API_KEY=your_youtube_api_key_here
+YOUTUBE_CLIENT_ID=your_youtube_client_id_here
+YOUTUBE_CLIENT_SECRET=your_youtube_client_secret_here
+
+# Pipeline Configuration
+BATCH_SIZE=100
+MAX_RETRIES=3
+RETRY_DELAY=5
+
+# Data Collection Settings
+POSTS_LIMIT=1000
+LOOKBACK_DAYS=7
+
+# Output Configuration
+OUTPUT_FORMAT=json
+OUTPUT_DIR=./output
+
+# Logging Configuration
+LOG_LEVEL=INFO
+LOG_FILE=./logs/pipeline.log
