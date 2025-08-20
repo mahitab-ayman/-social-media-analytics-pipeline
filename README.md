@@ -344,22 +344,7 @@ pipeline = SocialMediaAnalyticsPipeline()
 4. Add tests for new functionality
 5. Submit a pull request
 
-##  License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-##  Acknowledgments
-
-- **Twitter API** for social media data access
-- **Facebook Graph API** for platform integration
-- **YouTube Data API** for video analytics
-- **Apache Airflow** for workflow automation
-- **Pydantic** for data validation
-
-##  Support
-
-For questions and support:
-- Create an issue in the repository
 - Check the troubleshooting section
 - Review the configuration documentation
 
