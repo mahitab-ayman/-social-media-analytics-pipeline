@@ -2,7 +2,7 @@
 
 A robust data engineering pipeline that fetches, transforms, and analyzes social media data from multiple platforms, computing engagement metrics and insights.
 
-## 🎯 Project Overview
+## Project Overview
 
 This project implements a comprehensive social media analytics pipeline that:
 
@@ -12,7 +12,7 @@ This project implements a comprehensive social media analytics pipeline that:
 - **Automates execution** using Apache Airflow for daily runs
 - **Stores results** in multiple formats (JSON, CSV, SQLite/PostgreSQL)
 
-## 🏗️ Architecture
+##  Architecture
 
 ```
 ┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
@@ -34,7 +34,7 @@ This project implements a comprehensive social media analytics pipeline that:
 └─────────────────┘    └─────────────────┘
 ```
 
-## 🚀 Features
+##  Features
 
 ### Data Collection
 - **Multi-platform support**: Twitter, Facebook, YouTube
@@ -61,7 +61,7 @@ This project implements a comprehensive social media analytics pipeline that:
 - **Notifications**: Success/failure alerts
 - **Error recovery**: Automatic retry mechanisms
 
-## 📋 Requirements
+##  Requirements
 
 ### System Requirements
 - Python 3.8+
@@ -73,7 +73,7 @@ This project implements a comprehensive social media analytics pipeline that:
 - **Facebook**: App with Graph API permissions
 - **YouTube**: Google Cloud project with YouTube Data API v3
 
-## 🛠️ Installation
+##  Installation
 
 ### 1. Clone the Repository
 ```bash
@@ -122,7 +122,7 @@ nano .env  # or use your preferred editor
 4. Generate API key
 5. Add to your `.env` file
 
-## 🚀 Usage
+##  Usage
 
 ### Basic Pipeline Execution
 
@@ -200,7 +200,7 @@ airflow webserver --port 8080
 airflow scheduler
 ```
 
-## 📊 Data Models
+##  Data Models
 
 ### Post Model
 ```python
@@ -227,7 +227,7 @@ class AnalyticsSummary(BaseModel):
     moving_averages: List[MovingAverage]
 ```
 
-## 🔧 Configuration
+##  Configuration
 
 ### Environment Variables
 
@@ -248,7 +248,7 @@ MAX_RETRIES = 3           # API retry attempts
 RETRY_DELAY = 5           # Seconds between retries
 ```
 
-## 📁 Project Structure
+##  Project Structure
 
 ```
 social_media_analytics/
@@ -270,7 +270,7 @@ social_media_analytics/
 └── README.md                 # This file
 ```
 
-## 🧪 Testing
+##  Testing
 
 ### Run Tests
 ```bash
@@ -287,7 +287,7 @@ pip install pytest-cov
 pytest --cov=. tests/
 ```
 
-## 📈 Monitoring and Logging
+##  Monitoring and Logging
 
 ### Logging Configuration
 - **Structured logging** with structlog
@@ -301,14 +301,14 @@ pytest --cov=. tests/
 - **Data quality metrics**
 - **Error rate tracking**
 
-## 🔒 Security Considerations
+##  Security Considerations
 
 - **API keys** stored in environment variables
 - **No hardcoded credentials** in source code
 - **Rate limiting** to respect API quotas
 - **Error logging** without sensitive data exposure
 
-## 🚨 Troubleshooting
+##  Troubleshooting
 
 ### Common Issues
 
@@ -336,7 +336,7 @@ logging.basicConfig(level=logging.DEBUG)
 pipeline = SocialMediaAnalyticsPipeline()
 ```
 
-## 🤝 Contributing
+##  Contributing
 
 1. Fork the repository
 2. Create a feature branch
@@ -344,11 +344,11 @@ pipeline = SocialMediaAnalyticsPipeline()
 4. Add tests for new functionality
 5. Submit a pull request
 
-## 📄 License
+##  License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-## 🙏 Acknowledgments
+##  Acknowledgments
 
 - **Twitter API** for social media data access
 - **Facebook Graph API** for platform integration
@@ -356,7 +356,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 - **Apache Airflow** for workflow automation
 - **Pydantic** for data validation
 
-## 📞 Support
+##  Support
 
 For questions and support:
 - Create an issue in the repository
