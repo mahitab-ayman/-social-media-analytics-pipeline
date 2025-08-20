@@ -212,7 +212,7 @@ class DataStorage:
                     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
                 ''', (
                     post.post_id,
-                    post.platform.value,
+                    post.platform.value if hasattr(post.platform, 'value') else post.platform,
                     post.content,
                     post.author_id,
                     post.author_name,
@@ -238,7 +238,7 @@ class DataStorage:
                         VALUES (?, ?, ?, ?, ?, ?, ?, ?)
                     ''', (
                         metric.date,
-                        metric.platform.value,
+                        metric.platform.value if hasattr(metric.platform, 'value') else metric.platform,
                         metric.total_posts,
                         metric.total_likes,
                         metric.total_comments,
